@@ -10,7 +10,9 @@ class GoodsController extends Controller
 
     public function index() {
 
-        return view('goods.index');
+      $data = Good::all();
+
+      return view('goods.index', ['data' => $data]);
      }
    
      public function create() {
@@ -28,12 +30,14 @@ class GoodsController extends Controller
    
         $goods->save();
    
-        return redirect('goods.index');
+        return redirect('goods');
      }
    
      public function edit($id) {
+
+      $data = Good::all();
    
-        return view('goods.edit');
+      return view('goods.edit', ['data' => $data]);
      }
    
      public function update(Request $request, $id) {
@@ -46,8 +50,7 @@ class GoodsController extends Controller
       
         $goods->update();
    
-        $data = Good::all();
-        return redirect('goods.index', ['data' => $data]);
+        return redirect('goods.index');
      }
    
      public function delete($id) {

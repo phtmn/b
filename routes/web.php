@@ -34,7 +34,7 @@ Route::put('profile/update', [GoodsController::class, 'update']);
 
 Route::get('/goods', [GoodsController::class, 'index']); 
 Route::get('goods/create', [GoodsController::class, 'create']);
-Route::post('good/create', [GoodsController::class, 'store']);
+Route::post('good/store', [GoodsController::class, 'store']);
 Route::get('goods/edit', [GoodsController::class, 'edit']);
 Route::put('good/update', [GoodsController::class, 'update']);
 Route::delete('good/delete', [GoodsController::class, 'destroy']);
